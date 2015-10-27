@@ -51,7 +51,7 @@ lines:			# You can add HTML Tags in the Text
   - text: "The most interesting types of data are those collected for one purpose and used for another."
   - text: "It’s useful for a company to have its scientists actually publish what they do. It keeps them honest."
   - text: "The best way to become a data scientist is to do data science."
-  - text: "Data scientists are kind of like the new Renaissance folks, because data science is inherently multidisciplinary."
+  - text: "Data scientists are kind of like the new Renaissance folks because data science is inherently multidisciplinary."
 
 
 ########

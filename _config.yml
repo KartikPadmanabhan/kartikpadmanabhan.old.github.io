@@ -8,7 +8,7 @@ url: "https://kartikpadmanabhan.github.io"
 # and NOT your user repository (https://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 
-baseurl: /personal-jekyll-theme
+baseurl: /kartikpadmanabhan.github.io
 
 google-tracking-id: "<YOUR GOOGLE TRACKING ID>"
 
@@ -61,7 +61,7 @@ paginate: 5
 fb-share: True
 twitter-share: True
 reddit-share: True
-disqus-shortname: "panossakkos"
+disqus-shortname: "kartikpadmanabhan"
 
 ###############
 # Life Events #
@@ -70,7 +70,7 @@ disqus-shortname: "panossakkos"
 events:
   - image: "/img/career/oracle.png"
     date: "September 2007 - Today"
-    description: "Working For Oracle!"
+    description: "Working For Oracle Corporation!"
   - image: "/img/career/cmu.png"
     date: "April 2004"
     description: "Started Carnegie Mellon University!"

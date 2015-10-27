@@ -47,8 +47,12 @@ type-speed:	10		# Default 10
 start-delay: 200	# Default 200
 delete-delay: 5000	# Default 5000
 lines:			# You can add HTML Tags in the Text
-  - text: "The lower you fall, the higher you'll fly."
-  - text: "Where’s your will to be weird?"
+  - text: "Most of the knowledge in the world in the future is going to be extracted by machines and will reside in machines."
+  - text: "The most interesting types of data are those collected for one purpose and used for another."
+  - text: "It’s useful for a company to have its scientists actually publish what they do. It keeps them honest."
+  - text: "The best way to become a data scientist is to do data science."
+  - text: "Data scientists are kind of like the new Renaissance folks, because data science is inherently multidisciplinary."
+
 
 ########
 # Blog #

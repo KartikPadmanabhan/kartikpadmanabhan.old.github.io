@@ -65,6 +65,7 @@ fb-share: True
 twitter-share: True
 reddit-share: True
 disqus-shortname: "kartikpadmanabhan"
+gems: [jekyll-paginate]
 
 ###############
 # Life Events #

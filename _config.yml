@@ -64,7 +64,7 @@ paginate: 5
 fb-share: True
 twitter-share: True
 reddit-share: True
-disqus-shortname: "kartikpadmanabhan"
+disqus-shortname: "Kartik Padmanabhan"
 gems: ["jekyll-paginate"]
 
 ###############

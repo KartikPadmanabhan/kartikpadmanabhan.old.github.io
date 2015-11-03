@@ -1,0 +1,22 @@
+---
+layout: post
+section-type: post
+title: Spearman Vs Pearson Correlations
+category: statistics
+tags: [ 'tutorial' ]
+---
+
+# Pearson Correlation vs Spearman Correlation
+
+<p>
+The Pearson correlation you have encountered in Part 2 evaluates the linear relationship between two continuous variables. The Spearman correlation evaluates the monotonic relationship between two continuous or ordinal variables without assuming linearity of the variables. Spearman correlation is often more robust in capturing non-linear relationship between variables.
+
+In addition to the family_income and parent_avg_age, you are also given data about the number of hours the students studied. Load the new data in from data/admissions_with_study_hrs_and_sports.csv.
+
+Make a scatter plot of the gpa against hrs_studied. Make the points more transparent so you can see the density of the points. Use the following command get the slope and intercept of a straight line to fit the data : slope, intercept, r_value, p_value, std_err = sc.linregress(gpa, hrs_studied). Plot the straight line on the scatter plot.
+
+Use the functions scipy.stats.pearsonr and scipy.stats.spearmanr to compute the Pearson and Spearman correlation coefficients between gpa and hrs_studied. What is the difference between the two coefficients? Can you explain why they are different?
+
+Repeat step 2 and 3 for gpa and sport_performance. Is there a strong relationship between the two variables? Do the correlation coefficients reflect that? Explain your answer.
+
+</p>

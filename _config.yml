@@ -124,6 +124,7 @@ social:
 pages_list:
   About: 'about'
   Blog: 'blog'
+  Articles: 'articles'
   Career: 'career'
   Contact: 'contact'
 

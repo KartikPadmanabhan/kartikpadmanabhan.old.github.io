@@ -12,22 +12,25 @@ Welcome to StackEdit!
 
 # STATISTICAL ESTIMATION
 
-```
+{% highlight python %}
     import matplotlib.pyplot as plt
     import pandas as pd
     import numpy as np
     import scipy as scs
     from scipy import stats
     %pylab inline
-```
+{% highlight python %}
+
     Populating the interactive namespace from numpy and matplotlib
 
 
+{% highlight python %}
 
     df=pd.read_csv('data/rainfall.csv')
 
 
     df.head()
+{% highlight python %}
 
 
 
@@ -141,6 +144,7 @@ Welcome to StackEdit!
 
 ### Histogram of Jan rainfall
 
+{% highlight python %}
 
     df.Jan.hist()
 
@@ -148,6 +152,7 @@ Welcome to StackEdit!
 
 
     <matplotlib.axes._subplots.AxesSubplot at 0x10a156cc0>
+{% highlight python %}
 
 
 
@@ -157,6 +162,7 @@ Welcome to StackEdit!
 
 ## Part 2: Method of Moments
 
+{% highlight python %}
 
     df_Jan=df.Jan
     df_Jan.head()
@@ -181,11 +187,13 @@ Welcome to StackEdit!
 
 
     (4.5445714285714285, 0.2222735546757808)
+{% highlight python %}
 
 
 
 ##   GAMMA AND NORMAL DISTRIBUTION
 
+{% highlight python %}
 
     a, b = (smean**2)/(sem**2), (smean)/(sem**2)
     a, b
@@ -307,5 +315,6 @@ Welcome to StackEdit!
 
 
 
+{% highlight python %}
     
 

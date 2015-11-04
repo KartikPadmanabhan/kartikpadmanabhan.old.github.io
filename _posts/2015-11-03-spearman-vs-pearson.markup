@@ -19,7 +19,7 @@ Welcome to StackEdit!
     import scipy as scs
     from scipy import stats
     %pylab inline
-{% highlight python %}
+{% endhighlight %}
 
     Populating the interactive namespace from numpy and matplotlib
 
@@ -30,7 +30,7 @@ Welcome to StackEdit!
 
 
     df.head()
-{% highlight python %}
+{% endhighlight %}
 
 
 
@@ -152,7 +152,7 @@ Welcome to StackEdit!
 
 
     <matplotlib.axes._subplots.AxesSubplot at 0x10a156cc0>
-{% highlight python %}
+{% endhighlight %}
 
 
 
@@ -187,7 +187,7 @@ Welcome to StackEdit!
 
 
     (4.5445714285714285, 0.2222735546757808)
-{% highlight python %}
+{% endhighlight %}
 
 
 
@@ -315,6 +315,6 @@ Welcome to StackEdit!
 
 
 
-{% highlight python %}
+{% endhighlight %}
     
 

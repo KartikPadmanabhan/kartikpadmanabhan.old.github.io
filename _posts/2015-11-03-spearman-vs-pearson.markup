@@ -10,8 +10,7 @@ tags: [ 'tutorial' ]
 Welcome to StackEdit!
 ===================
 
-
-Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
+# STATISTICAL ESTIMATION
 
 ```
     import matplotlib.pyplot as plt
@@ -152,4 +151,161 @@ Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete
 
 
 
+
+![png](individual_kartik_redo_files/individual_kartik_redo_4_1.png)
+
+
+## Part 2: Method of Moments
+
+
+    df_Jan=df.Jan
+    df_Jan.head()
+
+
+
+
+    0    2.76
+    1    2.32
+    2    2.96
+    3    5.22
+    4    6.15
+    Name: Jan, dtype: float64
+
+
+
+
+    smean, sem = np.mean(df_Jan) , stats.sem(df_Jan)
+    smean, sem
+
+
+
+
+    (4.5445714285714285, 0.2222735546757808)
+
+
+
+##   GAMMA AND NORMAL DISTRIBUTION
+
+
+    a, b = (smean**2)/(sem**2), (smean)/(sem**2)
+    a, b
+
+
+
+
+    (418.03272164179572, 20.445848518508488)
+
+
+
+
+    from scipy.stats import gamma
+    from scipy.stats import norm
+    gamma_rv = gamma(a, scale=1/b)
+    norm_rv = norm(smean, sem)
+    xvals=np.linspace(min(df_Jan),max(df_Jan))
+    gamma_p=gamma_rv.pdf(xvals)
+    norm_p=norm_rv.pdf(xvals)
+    fig, ax=plt.subplots(1,1,figsize=(10,5))
+    ax.plot(xvals,gamma_p,color='r',alpha=0.4)
+    ax.plot(xvals,norm_p,color='b',alpha=0.4)
+    ax.set_xlabel('Rainfall')
+    ax.set_ylabel('Probability Density')
+    ax.set_title('Jan')
+    ax.legend()
+    ax.plot()
+
+    /Users/aukauk/anaconda3/lib/python3.4/site-packages/matplotlib/axes/_axes.py:475: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+      warnings.warn("No labelled objects found. "
+
+
+
+
+
+    []
+
+
+
+
+![png](individual_kartik_redo_files/individual_kartik_redo_10_2.png)
+
+
+
+    # Define a function that plots distribution fitted to one month's of data
+    def plot_mom(df, col, ax):
+        data = df[col]
+    
+        sample_mean = data.mean()
+        sample_var = np.sum(np.square(data - sample_mean)) /  (data.count() - 1)
+    
+        alpha = sample_mean**2 / sample_var
+        beta =  sample_mean / sample_var
+    
+        gamma_rv = gamma(a=alpha, scale=1/beta)
+    
+        x_vals = np.linspace(data.min(), data.max())
+        gamma_p = gamma_rv.pdf(x_vals)
+    
+        ax.plot(x_vals, gamma_p, color='r', alpha=0.4)
+    
+        ax.set_xlabel('Rainfall')
+        ax.set_ylabel('Probability Density')
+        ax.set_title(col)
+    
+        ax.set_xlim(0, 12)
+        ax.set_ylim(0., .35)
+        ax.legend()
+    
+    
+        label = 'alpha = %.2f\nbeta = %.2f' % (alpha, beta)
+        ax.annotate(label, xy=(8, 0.3))
+    
+    
+    months = df.columns - ['Year']
+    months_df = df[months]
+    
+    # Use pandas to get the histogram, the axes as tuples are returned
+    axes = months_df.hist(bins=20, normed=1,
+                        grid=0, edgecolor='none',
+                        figsize=(15, 10),
+                        layout=(3,4))
+    
+    # Iterate through the axes and plot the line on each of the histogram
+    for month, ax in zip(months, axes.flatten()):
+        plot_mom(months_df, month, ax)
+    
+    plt.show()
+
+    /Users/aukauk/anaconda3/lib/python3.4/site-packages/pandas/core/index.py:1353: FutureWarning: using '-' to provide set differences with Indexes is deprecated, use .difference()
+      "use .difference()",FutureWarning)
+    /Users/aukauk/anaconda3/lib/python3.4/site-packages/matplotlib/axes/_axes.py:475: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
+      warnings.warn("No labelled objects found. "
+
+
+
+![png](individual_kartik_redo_files/individual_kartik_redo_11_1.png)
+
+
+
+    ax = df_Jan.hist(normed=1, edgecolor='none', figsize=(10, 7))
+    ax.set_xlabel('Rainfall')
+    ax.set_ylabel('Probability Density')
+    ax.set_title('January Rainfall')
+    
+    ax.plot(xvals, gamma_p, color='r', label='Gamma', alpha=0.6)
+    ax.plot(xvals, norm_p, color='g', label='Normal', alpha=0.6)
+    ax.legend()
+
+
+
+
+    <matplotlib.legend.Legend at 0x110838438>
+
+
+
+
+![png](individual_kartik_redo_files/individual_kartik_redo_12_1.png)
+
+
+
+    
 

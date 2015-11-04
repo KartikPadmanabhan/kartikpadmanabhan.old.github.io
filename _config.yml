@@ -18,7 +18,7 @@ force-https: True
 
 # Introduces Pygmants
 
-pygments: True
+pygments: true
 
 #############
 # HTML Head #

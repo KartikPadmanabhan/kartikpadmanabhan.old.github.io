@@ -16,6 +16,10 @@ google-tracking-id: "<YOUR GOOGLE TRACKING ID>"
 
 force-https: True
 
+# Introduces Pygmants
+
+pygments: True
+
 #############
 # HTML Head #
 #############

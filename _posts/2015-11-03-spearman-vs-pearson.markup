@@ -6,315 +6,57 @@ category: statistics
 tags: [ 'tutorial' ]
 ---
 
+Just a sample post to show some of the *typography* elements supported from
+**daktilo** theme.
 
-Welcome to StackEdit!
-===================
+___
 
-# STATISTICAL ESTIMATION
+A blockquote:
 
-{% highlight python %}
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    import numpy as np
-    import scipy as scs
-    from scipy import stats
-    %pylab inline
-{% endhighlight %}
+> We are Hitchhikers in the road of open source knowledge.
 
-    Populating the interactive namespace from numpy and matplotlib
+## Header 2
+
+Duis lacinia commodo dui, vel aliquam metus hendrerit eu. Integer et scelerisque dui. Sed nec molestie quam. Donec sit amet nisl a massa commodo ultrices nec quis nunc. Aenean aliquet eu arcu adipiscing dignissim. Nunc dictum elit vitae dolor molestie aliquet.
 
 
-{% highlight python %}
+Example code:
 
-    df=pd.read_csv('data/rainfall.csv')
+{% highlight javascript %}
+var light = new Light();
+var switchUp = new FlipUpCommand(light);
+var switchDown = new FlipDownCommand(light);
+var s = new Switch();
 
-
-    df.head()
-{% endhighlight %}
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Jan</th>
-      <th>Feb</th>
-      <th>Mar</th>
-      <th>Apr</th>
-      <th>May</th>
-      <th>Jun</th>
-      <th>Jul</th>
-      <th>Aug</th>
-      <th>Sep</th>
-      <th>Oct</th>
-      <th>Nov</th>
-      <th>Dec</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1871</td>
-      <td>2.76</td>
-      <td>4.58</td>
-      <td>5.01</td>
-      <td>4.13</td>
-      <td>3.30</td>
-      <td>2.98</td>
-      <td>1.58</td>
-      <td>2.36</td>
-      <td>0.95</td>
-      <td>1.31</td>
-      <td>2.13</td>
-      <td>1.65</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1872</td>
-      <td>2.32</td>
-      <td>2.11</td>
-      <td>3.14</td>
-      <td>5.91</td>
-      <td>3.09</td>
-      <td>5.17</td>
-      <td>6.10</td>
-      <td>1.65</td>
-      <td>4.50</td>
-      <td>1.58</td>
-      <td>2.25</td>
-      <td>2.38</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1873</td>
-      <td>2.96</td>
-      <td>7.14</td>
-      <td>4.11</td>
-      <td>3.59</td>
-      <td>6.31</td>
-      <td>4.20</td>
-      <td>4.63</td>
-      <td>2.36</td>
-      <td>1.81</td>
-      <td>4.28</td>
-      <td>4.36</td>
-      <td>5.94</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1874</td>
-      <td>5.22</td>
-      <td>9.23</td>
-      <td>5.36</td>
-      <td>11.84</td>
-      <td>1.49</td>
-      <td>2.87</td>
-      <td>2.65</td>
-      <td>3.52</td>
-      <td>3.12</td>
-      <td>2.63</td>
-      <td>6.12</td>
-      <td>4.19</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1875</td>
-      <td>6.15</td>
-      <td>3.06</td>
-      <td>8.14</td>
-      <td>4.22</td>
-      <td>1.73</td>
-      <td>5.63</td>
-      <td>8.12</td>
-      <td>1.60</td>
-      <td>3.79</td>
-      <td>1.25</td>
-      <td>5.46</td>
-      <td>4.30</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-### Histogram of Jan rainfall
-
-{% highlight python %}
-
-    df.Jan.hist()
-
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x10a156cc0>
+s.storeAndExecute(switchUp);
+s.storeAndExecute(switchDown);
 {% endhighlight %}
 
 
+A list:
 
+- Praesent nisi elit, bibendum ut consectetur ac, aliquet in nunc
+- Donec ante est, volutpat in mi et, pulvinar congue dolor.
+- Quisque ultrices pulvinar sollicitudin.
+- Duis elementum odio eu euismod suscipit.
+- Integer enim lorem, interdum sit amet consectetur non, bibendum eget neque.
 
-![png](individual_kartik_redo_files/individual_kartik_redo_4_1.png)
+A numbered list:
 
+1. Praesent nisi elit, bibendum ut consectetur ac, aliquet in nunc.
+2. Donec ante est, volutpat in mi et, pulvinar congue dolor.
+3. Quisque ultrices pulvinar sollicitudin.
+4. Duis elementum odio eu euismod suscipit.
+5. Integer enim lorem, interdum sit amet consectetur non, bibendum eget neque.
 
-## Part 2: Method of Moments
+Definition list:
 
-{% highlight python %}
+Curabitur cursus magna eu sem cursus
+: ac ultrices urna pharetra.
+: Duis scelerisque ipsum eu luctus elementum.
 
-    df_Jan=df.Jan
-    df_Jan.head()
+Pellentesque habitant morbi tristique senectus
+: Curabitur malesuada lacus ac gravida porttitor
+: Duis sodales feugiat lorem et mollis.
 
-
-
-
-    0    2.76
-    1    2.32
-    2    2.96
-    3    5.22
-    4    6.15
-    Name: Jan, dtype: float64
-
-
-
-
-    smean, sem = np.mean(df_Jan) , stats.sem(df_Jan)
-    smean, sem
-
-
-
-
-    (4.5445714285714285, 0.2222735546757808)
-{% endhighlight %}
-
-
-
-##   GAMMA AND NORMAL DISTRIBUTION
-
-{% highlight python %}
-
-    a, b = (smean**2)/(sem**2), (smean)/(sem**2)
-    a, b
-
-
-
-
-    (418.03272164179572, 20.445848518508488)
-
-
-
-
-    from scipy.stats import gamma
-    from scipy.stats import norm
-    gamma_rv = gamma(a, scale=1/b)
-    norm_rv = norm(smean, sem)
-    xvals=np.linspace(min(df_Jan),max(df_Jan))
-    gamma_p=gamma_rv.pdf(xvals)
-    norm_p=norm_rv.pdf(xvals)
-    fig, ax=plt.subplots(1,1,figsize=(10,5))
-    ax.plot(xvals,gamma_p,color='r',alpha=0.4)
-    ax.plot(xvals,norm_p,color='b',alpha=0.4)
-    ax.set_xlabel('Rainfall')
-    ax.set_ylabel('Probability Density')
-    ax.set_title('Jan')
-    ax.legend()
-    ax.plot()
-
-    /Users/aukauk/anaconda3/lib/python3.4/site-packages/matplotlib/axes/_axes.py:475: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
-      warnings.warn("No labelled objects found. "
-
-
-
-
-
-    []
-
-
-
-
-![png](individual_kartik_redo_files/individual_kartik_redo_10_2.png)
-
-
-
-    # Define a function that plots distribution fitted to one month's of data
-    def plot_mom(df, col, ax):
-        data = df[col]
-    
-        sample_mean = data.mean()
-        sample_var = np.sum(np.square(data - sample_mean)) /  (data.count() - 1)
-    
-        alpha = sample_mean**2 / sample_var
-        beta =  sample_mean / sample_var
-    
-        gamma_rv = gamma(a=alpha, scale=1/beta)
-    
-        x_vals = np.linspace(data.min(), data.max())
-        gamma_p = gamma_rv.pdf(x_vals)
-    
-        ax.plot(x_vals, gamma_p, color='r', alpha=0.4)
-    
-        ax.set_xlabel('Rainfall')
-        ax.set_ylabel('Probability Density')
-        ax.set_title(col)
-    
-        ax.set_xlim(0, 12)
-        ax.set_ylim(0., .35)
-        ax.legend()
-    
-    
-        label = 'alpha = %.2f\nbeta = %.2f' % (alpha, beta)
-        ax.annotate(label, xy=(8, 0.3))
-    
-    
-    months = df.columns - ['Year']
-    months_df = df[months]
-    
-    # Use pandas to get the histogram, the axes as tuples are returned
-    axes = months_df.hist(bins=20, normed=1,
-                        grid=0, edgecolor='none',
-                        figsize=(15, 10),
-                        layout=(3,4))
-    
-    # Iterate through the axes and plot the line on each of the histogram
-    for month, ax in zip(months, axes.flatten()):
-        plot_mom(months_df, month, ax)
-    
-    plt.show()
-
-    /Users/aukauk/anaconda3/lib/python3.4/site-packages/pandas/core/index.py:1353: FutureWarning: using '-' to provide set differences with Indexes is deprecated, use .difference()
-      "use .difference()",FutureWarning)
-    /Users/aukauk/anaconda3/lib/python3.4/site-packages/matplotlib/axes/_axes.py:475: UserWarning: No labelled objects found. Use label='...' kwarg on individual plots.
-      warnings.warn("No labelled objects found. "
-
-
-
-![png](individual_kartik_redo_files/individual_kartik_redo_11_1.png)
-
-
-
-    ax = df_Jan.hist(normed=1, edgecolor='none', figsize=(10, 7))
-    ax.set_xlabel('Rainfall')
-    ax.set_ylabel('Probability Density')
-    ax.set_title('January Rainfall')
-    
-    ax.plot(xvals, gamma_p, color='r', label='Gamma', alpha=0.6)
-    ax.plot(xvals, norm_p, color='g', label='Normal', alpha=0.6)
-    ax.legend()
-
-
-
-
-    <matplotlib.legend.Legend at 0x110838438>
-
-
-
-
-![png](individual_kartik_redo_files/individual_kartik_redo_12_1.png)
-
-
-
-{% endhighlight %}
-    
-
+Want to suggest something? Please [Send me a request](https://github.com/kronik3r/daktilo/issues/new).

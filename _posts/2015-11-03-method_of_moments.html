@@ -899,7 +899,7 @@ import numpy as np
 
 
 Image(filename=&#39;images/load_profile.png&#39;)</code></pre>
-<p><img src="method_of_moments_files/method_of_moments_6_0.png" alt="png" /></p>
+<p><img src="{{site.baseurl}}/_posts/method_of_moments_files/method_of_moments_6_0.png" alt="png" /></p>
 <p>Reading our historic load profile data in the dataframe.</p>
 <pre><code>df=pd.read_csv(&#39;data/TMP_AWR_LOAD_PROFILE_AGG.csv&#39;, sep=&#39;|&#39;,parse_dates=True)
 df.head()</code></pre>
@@ -1408,7 +1408,7 @@ ax.plot(x_vals, gamma_p, color=&#39;r&#39;, label=&#39;Gamma&#39;, alpha=0.6)
 ax.legend()
 fig.savefig(&#39;images/backgroundcpu.png&#39;)
 #py.iplot_mpl(fig, filename=&#39;s6_log-scales&#39;)</code></pre>
-<p><img src="method_of_moments_files/method_of_moments_22_0.png" alt="png" /></p>
+<p><img src="{{site.baseurl}}/_posts/method_of_moments_files/method_of_moments_22_0.png" alt="png" /></p>
 <pre><code># Lets put everything in a function 
 # Define a function that plots distribution fitted to one month&#39;s of data
 def plot_mom(df, col):
